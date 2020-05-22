@@ -20,7 +20,7 @@ let db = new sqlite3.Database(':memory:', (err) => {
   console.log('Connected to the in-memory SQlite database.');
 });
 
-/* Make connection to pool and create the one table? */
+// Make connection to pool and create the one table?
 pool.getConnection((err, connection) => {
   if (err) throw err;
   connection.query(
