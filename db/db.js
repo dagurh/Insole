@@ -1,5 +1,5 @@
 /*nnconst sqlite3 = require('sqlite3').verbose();
-//Skaber en database objekt.
+//Skaber et database objekt.
 let db = new sqlite3.Database(':insole:', (err) => {
   if (err) {
     return console.error(err.message);
