@@ -1,24 +1,20 @@
 {
-  "name": "insole",
+  "description": "A simple server to received data posted by a Neonious One",
   "version": "1.0.0",
+  "name": "data-logger",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Team Persici",
+  "author": "Niels Olof Bouvin",
   "license": "ISC",
-  "description": "Insole",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "chart.js": "^2.9.3",
     "express": "^4.17.1",
-    "mysql": "^2.18.1",
-    "sqlite3": "^4.1.1",
+    "sqlite3": "^4.2.0",
     "ws": "^7.2.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@gitlab.au.dk:itpdp2020/persici/insole.git"
-  },
-  "devDependencies": {}
+  }
 }
