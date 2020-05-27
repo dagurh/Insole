@@ -1,45 +1,25 @@
 const sqlite3 = require('sqlite3').verbose();
-const fs = require('fs');
-const Identity = JSON.parse(
-  fs.readFileSync('../secrets/SECRET.json', 'utf8')
-);
 
-// pool connection?
-const pool = sqlite3.createPool({
-  host: 'itwot00.cs.au.dk',
-  user: Identity.user,
-  password: Identity.password,
-  database: 'VM07'
-});
-
-// open an in-memory database
-let db = new sqlite3.Database(':memory:', (err) => {
+// open the database
+let db = new sqlite3.Database('./insole.db', sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
   if (err) {
-    return console.error(err.message);
+    console.error(err.message);
   }
-  console.log('Connected to the in-memory SQlite database.');
+  console.log('Connected to the insole database.');
 });
 
-// Make connection to pool and create the one table
-pool.getConnection((err, connection) => {
-  if (err) throw err;
-  connection.query(
-    `CREATE TABLE IF NOT EXISTS insole
-            (timestamp BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY, temperature INT, humidity INT)`,
-    err => {
-      if (err) throw err;
-    }
-  );
-  connection.release();
+db.serialize(function() {
+  db.run(`CREATE TABLE IF NOT EXISTS measurements
+  (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, timestamp BIGINT, standing_or_sitting INTEGER)`);
 });
 
-// close the database connection
 db.close((err) => {
   if (err) {
-    return console.error(err.message);
+    console.error(err.message);
   }
   console.log('Close the database connection.');
 });
+
 
 
 
