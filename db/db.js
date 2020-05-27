@@ -1,33 +1,73 @@
-const sqlite3 = require('sqlite3').verbose();
+'use strict';
+const fs = require('fs');
+const mysql = require('mysql');
 
-// open the database
-let db = new sqlite3.Database('./insole.db', sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
-  if (err) {
-    console.error(err.message);
+const Identity = JSON.parse(
+  fs.readFileSync('../secrets/SECRET.json', 'utf8')
+);
+const pool = mysql.createPool({
+  host: 'itwot00.cs.au.dk',
+  user: Identity.user,
+  password: Identity.password,
+  database: 'VM03'
+});
+
+pool.getConnection((err, connection) => {
+  if (err) throw err;
+  connection.query(
+    `CREATE TABLE IF NOT EXISTS insole
+            (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, timestamp BIGINT, standing_or_sitting INT)`,
+    err => {
+      if (err) throw err;
+    }
+  );
+  connection.release();
+});
+
+class Insole {
+  static all (callback) {
+    pool.getConnection((err, connection) => {
+      if (err) throw err;
+      connection.query('SELECT * FROM insole ORDER BY id DESC', (err, results, fields) => {
+        callback(err, results);
+        connection.release();
+      });
+    });
   }
-  console.log('Connected to the insole database.');
-});
 
-db.serialize(function() {
-  db.run(`CREATE TABLE IF NOT EXISTS measurements
-  (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, timestamp BIGINT, standing_or_sitting INTEGER)`);
-});
-
-db.run(`INSERT INTO measurements(timestamp, standing_or_sitting) VALUES(?, ?)`, [Date.now(), 5], function(err) {
-  if (err) {
-    return console.log(err.message);
+  static create (data, callback) {
+    pool.getConnection((err, connection) => {
+      if (err) throw err;
+      connection.query(
+        'INSERT INTO insole(timestamp, standing_or_sitting) VALUES (?, ?)',
+        [data.timestamp, data.standing_or_sitting],
+        (err, results, fields) => {
+          callback(err, results);
+          connection.release();
+        }
+      );
+    });
   }
-  // get the last insert id
-  console.log(`A row has been inserted with rowid ${this.lastID}`);
-});
 
-db.close((err) => {
-  if (err) {
-    console.error(err.message);
+  static limit (limit, callback) {
+    pool.getConnection((err, connection) => {
+      if (err) throw err;
+      console.log('Limit: ' + this.limit);
+      connection.query(
+        'SELECT * FROM insole ORDER BY id DESC LIMIT ?', [limit],
+        (err, results, fields) => {
+          callback(err, results);
+          connection.release();
+        }
+      );
+    });
   }
-  console.log('Close the database connection.');
-});
 
-
-
-
+  static end () {
+    pool.end(err => {
+      if (err) throw err;
+    });
+  }
+}
+module.exports = pool;
+module.exports.Insole = Insole;

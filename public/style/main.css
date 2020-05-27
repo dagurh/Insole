@@ -1,0 +1,200 @@
+body {
+  font-family: sans-serif;
+  background-color: #cbd9e1;
+
+    background-image: url(./Top.jpg);
+    background-repeat: no-repeat;
+    Background-size: cover;
+    background-position: center;
+  
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid white;
+}
+
+th {
+  font-size: 18px;
+}
+
+table {
+  margin: auto;
+}
+
+.box {
+  display: flex;
+	justify-content: center;
+	align-items: flex-start;
+} 
+
+.box2 {
+  display: flex;
+	justify-content: center;
+	align-items: flex-start;
+} 
+
+.chart, .dataList {
+  padding: 10px;
+  background-color: white;
+  margin: 10px;
+}
+
+.temp, .humid {
+  padding: 10px;
+  background-color: white;
+  margin: 10px;
+}
+
+.chart {
+  height: 500px;
+  width:600px;
+
+  background: linear-gradient(145deg, #e4717e, #ff8696);
+  box-shadow:  6px 6px 7px #bb5d68, 
+               -6px -6px 7px #ff9eb0;
+}
+
+.temp {
+  width:500px;
+
+}
+
+.humid {
+  width:500px;
+
+}
+
+.dataList {
+  width: 400px;
+  height: 500px;
+	overflow: auto;
+	color: white;
+  scrollbar-base-color: gold;
+  
+  background: linear-gradient(145deg, #e4717e, #ff8696);
+  box-shadow:  6px 6px 7px #bb5d68, 
+               -6px -6px 7px #ff9eb0;
+}
+
+h3 {
+  font-size: 40px;
+  margin-block-start: 3rem;
+  margin-block-end: 0rem;
+  color: white;
+}
+
+h1 {
+  color: white;
+}
+
+label {
+  color: white;
+}
+
+.headText {
+  margin: auto;
+  width: 40%;
+  padding: 10px;
+  margin-top: 14rem;
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin-left: .5em;
+  margin-top: 1rem;
+  padding: 1rem;
+    border: none;
+    cursor: pointer;
+    color: White;
+      text-transform: uppercase;
+      font-size: 16px;
+      text-decoration: none;
+
+      background: #fd7d8c;
+box-shadow: inset 6px 6px 7px #bb5d68, 
+            inset -6px -6px 7px #ff9eb0;
+}
+
+button:hover {
+  background: linear-gradient(145deg, #e4717e, #ff8696);
+  box-shadow:  6px 6px 7px #bb5d68, 
+               -6px -6px 7px #ff9eb0;
+}
+
+.temp {
+  background: linear-gradient(145deg, #e4717e, #ff8696);
+box-shadow:  6px 6px 7px #bb5d68, 
+             -6px -6px 7px #ff9eb0;
+}
+
+.humid {
+  background: linear-gradient(145deg, #e4717e, #ff8696);
+box-shadow:  6px 6px 7px #bb5d68, 
+             -6px -6px 7px #ff9eb0;
+}
+
+b {
+  color: #951010;
+}
+
+@media only screen and (max-width: 680px), only screen and (max-device-width: 480px) {
+
+  .box {
+    display: inline;
+}
+
+ .box2 {
+    display: inline;
+ }
+
+.chart {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  padding: 10px;
+}
+
+.dataList {
+	overflow: auto;
+	background-color: white;
+	color: black;
+  scrollbar-base-color: gold;
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 80px;
+
+}
+
+.headText {
+  width: 80%;
+  margin-top: 30rem;
+}
+
+th, td {
+  font-size: 30px;
+}
+
+.temp {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  padding: 10px;
+  margin-top: 2rem;
+}
+
+.humid {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  padding: 10px;
+  margin-top: 2rem;
+}
+
+}

@@ -70,20 +70,6 @@ function createChart () {
   );
 }
 
-function createTempChart () {
-  return div('', { id: 'Table' }) +
-  div(
-    canvas('', { id: 'Chart2' })
-  );
-}
-
-function createHumidChart () {
-  return div('', { id: 'Table' }) +
-  div(
-    canvas('', { id: 'Chart3' })
-  );
-}
-
 exports.measurementsView = function measurements (measurements = []) {
   return page(
     'Data measurements',
@@ -99,29 +85,20 @@ exports.measurementsView = function measurements (measurements = []) {
    div(
     table(
       thead(
-        tr(th('Timestamp') + th('Temperature') + th('Humidity'))
+        tr(th('Timestamp') + th('Standing_or_sitting'))
       ) +
       tbody(
         measurements.reduce((acc, measurement) => {
           acc +=
             tr(
               td(new Date(measurement.timestamp).toLocaleString('da-DK')) +
-              td(measurement.temperature) +
-              td(measurement.humidity)
+              td(measurement.standing_or_sitting)
             );
           return acc;
         }, ''), { id: 'tbody' }
       )
     )
    , { class: 'dataList' })
-    , { class: 'box' }) +
-    div(
-      div(
-    createTempChart() 
-    , { class: 'temp' }) +
-      div(
-    createHumidChart()
-      , { class: 'humid' })
-    , { class: 'box2' })
+    , { class: 'box' })
   );
 };
