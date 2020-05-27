@@ -13,7 +13,7 @@ db.serialize(function() {
   (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, timestamp BIGINT, standing_or_sitting INTEGER)`);
 });
 
-db.run(`INSERT INTO measurements(timestamp, standing_or_sitting) VALUES(?, ?)`, ['C'], function(err) {
+db.run(`INSERT INTO measurements(timestamp, standing_or_sitting) VALUES(?, ?)`, ['1,5'], function(err) {
   if (err) {
     return console.log(err.message);
   }
