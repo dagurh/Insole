@@ -2,8 +2,10 @@
 /* global XMLHttpRequest Chart */
 
 const insoleTable = document.querySelector('#Table');
-const insoleData = document.querySelector('#Chart');
-let lineChart = '';
+// const insoleData = document.querySelector('#Chart');
+const insoleBarData = document.querySelector('#BarChart');
+// let lineChart = '';
+let barChart = '';
 
 if (insoleTable) {
 
@@ -14,7 +16,8 @@ if (insoleTable) {
       const measurements = JSON.parse(request.responseText);
       const chartData = transformToChartData(JSON.parse(request.response));
       console.log(chartData);
-      createLineChart(chartData);
+      // createLineChart(chartData);
+      createBarChart(chartData);
     }
   };
   request.open('GET', requestURL);
@@ -99,10 +102,69 @@ else {
 }
 }
 
-function createLineChart (chartData = []) {
-  if (insoleData) {
-    lineChart = new Chart(insoleData, {
-      type: 'line',
+// function createLineChart (chartData = []) {
+//   if (insoleData) {
+//     lineChart = new Chart(insoleData, {
+//       type: 'line',
+//       data: {
+//         labels: chartData.labels,
+//         datasets: [
+//           {
+//             label: 'standing_or_sitting',
+//             fill: false,
+//             data: chartData.standing_or_sitting,
+//             backgroundColor: 'red',
+//             borderColor: 'red'
+//           }
+//         ]
+//       },
+//       options: {
+//         legend: {
+//           labels: {
+//               fontColor: "white",
+//               fontSize: 14
+//           }
+//       },
+//         title: {
+//           display: true,
+//           text: 'Measurements',
+//           fontColor: 'white',
+//           fontSize: 18
+//         },
+//         responsive: true,
+//         scales: {
+//           xAxes: [
+//             {
+//               stacked: false,
+//               display: false,
+              
+//             }
+//           ],
+//           yAxes: [
+//             {
+//               stacked: false,
+//               gridLines: {
+//                 color: "#FFFFFF"
+//               },
+//               ticks: {
+//                 fontColor: 'white',
+//                 max: 100,
+//                 min: -10,
+//                 stepSize: 0
+//               }
+//             }
+//           ]
+//         }
+//       }
+//     });
+// lineChart.update();
+// }
+// }
+
+function createBarChart(chartData = []) {
+  if (insoleBarData) {
+    barChart = new Chart(insoleBarData, {
+      type: 'bar',
       data: {
         labels: chartData.labels,
         datasets: [
@@ -111,49 +173,10 @@ function createLineChart (chartData = []) {
             fill: false,
             data: chartData.standing_or_sitting,
             backgroundColor: 'red',
-            borderColor: 'red'
-          }
-        ]
-      },
-      options: {
-        legend: {
-          labels: {
-              fontColor: "white",
-              fontSize: 14
-          }
-      },
-        title: {
-          display: true,
-          text: 'Measurements',
-          fontColor: 'white',
-          fontSize: 18
-        },
-        responsive: true,
-        scales: {
-          xAxes: [
-            {
-              stacked: false,
-              display: false,
-              
-            }
-          ],
-          yAxes: [
-            {
-              stacked: false,
-              gridLines: {
-                color: "#FFFFFF"
-              },
-              ticks: {
-                fontColor: 'white',
-                max: 100,
-                min: -10,
-                stepSize: 0
-              }
-            }
+            borderColor: 'red' }
           ]
+}
+});
+barChart.update();
         }
-      }
-    });
-lineChart.update();
-}
-}
+        }

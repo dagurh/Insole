@@ -66,7 +66,7 @@ function createChart () {
   numberOfData() +
   div('', { id: 'Table' }) +
   div(
-    canvas('', { id: 'Chart' })
+    canvas('', { id: 'BarChart' })
   );
 }
 
