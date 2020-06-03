@@ -53,7 +53,7 @@ function deleteTableRow () {
 }
 */
 function addData (measurement) {
-  lineChart.data.labels.push(new Date(measurement.timestamp).toLocaleString('da-DK'));
-  lineChart.data.datasets[0].data.push(measurement.standing_or_sitting);
-  lineChart.update();
+  barChart.data.labels.push(new Date(measurement.timestamp).toLocaleString('da-DK'));
+  barChart.data.datasets[0].data.push(measurement.standing_or_sitting);
+  barChart.update();
 }
