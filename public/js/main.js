@@ -83,6 +83,8 @@ function transformToChartData (measurements = []) {
   const standing_or_sitting = [];
   const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get('input');
+  let sitCounter;
+  let standCounter;
   var i;
   console.log(myParam);
   console.log(urlParams.has('input'));
@@ -90,6 +92,14 @@ function transformToChartData (measurements = []) {
   for (i = 0; i < myParam; i++) {
     labels.push(new Date(measurements[i].timestamp).toLocaleString('da-DK'));
     standing_or_sitting.push(measurements[i].standing_or_sitting);
+    if(standing_or_sitting <= 1){
+    sitCounter++;
+    console.log(sitCounter);
+    }
+    else {
+      standCounter++;
+      console.log(standCounter);
+    }
   }
   return { labels, standing_or_sitting };
 }
@@ -169,11 +179,21 @@ function createBarChart(chartData = []) {
         labels: chartData.labels,
         datasets: [
           {
-            label: 'standing_or_sitting',
+            label: 'Standing',
             fill: false,
-            data: chartData.standing_or_sitting,
+            // data: chartData.standing_or_sitting,
+            data: chartData.standCounter,
             backgroundColor: 'red',
-            borderColor: 'red' }
+            borderColor: 'red' 
+          },
+            {
+              label: 'Sitting',
+              fill: false,
+              // data: chartData.standing_or_sitting,
+              data: chartData.sitCounter,
+              backgroundColor: 'blue',
+              borderColor: 'blue'
+            }
           ]
 }
 });
