@@ -169,11 +169,19 @@ function createBarChart(chartData = []) {
         labels: chartData.labels,
         datasets: [
           {
-            label: 'standing_or_sitting',
+            label: 'Standing',
             fill: false,
             data: chartData.standing_or_sitting,
             backgroundColor: 'red',
-            borderColor: 'red' }
+            borderColor: 'red' 
+          },
+            {
+              label: 'Sitting',
+              fill: false,
+              data: chartData.standing_or_sitting,
+              backgroundColor: 'blue',
+              borderColor: 'blue'
+            }
           ]
 }
 });
