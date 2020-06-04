@@ -124,7 +124,8 @@ function createBarChart(chartData) {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    suggestedMax: 100,
+                    suggestedMin: 0
                 }
             }]
         }
