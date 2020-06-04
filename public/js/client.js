@@ -24,7 +24,6 @@ const latest = document.querySelector('#latest');
 
 function receivedMeasurement (measurement) {
   addNewRow(measurement);
-  // deleteTableRow();
   addData(measurement);
 }
 
@@ -45,13 +44,7 @@ function addNewRow (measurement) {
   row.appendChild(stand);
   tbody.prepend(row);
 }
-/*
-function deleteTableRow () {
-  const totalRowCount = tbody.rows.length;
-  console.log(totalRowCount);
-  tbody.deleteTableRow(totalRowCount - 1);
-}
-*/
+
 function addData (measurement) {
   barChart.data.labels.push(new Date(measurement.timestamp).toLocaleString('da-DK'));
   barChart.data.datasets[0].data.push(measurement.standing_or_sitting);
