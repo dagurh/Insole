@@ -2,21 +2,20 @@
 /* global XMLHttpRequest Chart */
 
 const insoleTable = document.querySelector('#Table');
-// const insoleData = document.querySelector('#Chart');
-const insoleBarData = document.querySelector('#BarChart');
-// let lineChart = '';
+const insoleBarData = document.querySelector('#BarChart').getContext('2d');
+console.log("barchart div", insoleBarData)
 let barChart = '';
 
 if (insoleTable) {
-
+  
   const request = new XMLHttpRequest();
   const requestURL = 'data';
   request.onload = () => {
     if (request.status === 200) {
       const measurements = JSON.parse(request.responseText);
-      const chartData = transformToChartData(JSON.parse(request.response));
-      console.log(chartData);
-      // createLineChart(chartData);
+      console.log("Measurements", measurements);
+      const chartData = transformToChartData(measurements);
+      console.log("Chart Data", chartData);
       createBarChart(chartData);
     }
   };
@@ -45,17 +44,17 @@ function th (text = '') {
 
 function table (entries = []) {
   const table = document.createElement('table');
-
+  
   const thead = document.createElement('thead');
   thead.appendChild(tr(entries[0], 'head'));
   table.appendChild(thead);
-
+  
   const tbody = document.createElement('tbody');
   for (const line of entries) {
     tbody.appendChild(tr(line));
   }
   table.appendChild(tbody);
-
+  
   return table;
 }
 
@@ -63,140 +62,75 @@ function tr (line = {}, type = 'body') {
   const tr = document.createElement('tr');
   switch (type) {
     case 'head':
-      for (const name of Object.keys(line)) {
-        tr.appendChild(th(name));
-      }
-      break;
-
+    for (const name of Object.keys(line)) {
+      tr.appendChild(th(name));
+    }
+    break;
+    
     case 'body':
     default:
-      for (const name of Object.keys(line)) {
-        tr.appendChild(td(line[name]));
-      }
-      break;
+    for (const name of Object.keys(line)) {
+      tr.appendChild(td(line[name]));
+    }
+    break;
   }
   return tr;
 }
 
 function transformToChartData (measurements = []) {
-  const labels = [];
-  const standing_or_sitting = [];
-  const urlParams = new URLSearchParams(window.location.search);
-  const myParam = urlParams.get('input');
-  let sitCounter;
-  let standCounter;
   var i;
-  console.log(myParam);
-  console.log(urlParams.has('input'));
-  if (myParam) {
-  for (i = 0; i < myParam; i++) {
-    labels.push(new Date(measurements[i].timestamp).toLocaleString('da-DK'));
-    standing_or_sitting.push(measurements[i].standing_or_sitting);
-    if(standing_or_sitting <= 1){
-    sitCounter++;
-    console.log(sitCounter);
+  let sitCounter = 0;
+  let standCounter = 0;
+  console.log("Measurements", measurements);
+  for (i = 0; i < measurements.length; i++) {
+    if(measurements[i].standing_or_sitting <= 1){
+      sitCounter++;
+      console.log(sitCounter);
     }
     else {
       standCounter++;
       console.log(standCounter);
     }
   }
-  return { labels, standing_or_sitting };
-}
-else {
-  for (const m of measurements) {
-    labels.push(new Date(m.timestamp).toLocaleString('da-DK'));
-    standing_or_sitting.push(m.standing_or_sitting);
-  }
-  return { labels, standing_or_sitting};
-}
+  const standingHabit = { sitCounter, standCounter };
+  console.log("Standing Habit", standingHabit);
+  return standingHabit; // {labels: datoer med målinger, standing: står målinger, sitting: sidde målinger}
 }
 
-// function createLineChart (chartData = []) {
-//   if (insoleData) {
-//     lineChart = new Chart(insoleData, {
-//       type: 'line',
-//       data: {
-//         labels: chartData.labels,
-//         datasets: [
-//           {
-//             label: 'standing_or_sitting',
-//             fill: false,
-//             data: chartData.standing_or_sitting,
-//             backgroundColor: 'red',
-//             borderColor: 'red'
-//           }
-//         ]
-//       },
-//       options: {
-//         legend: {
-//           labels: {
-//               fontColor: "white",
-//               fontSize: 14
-//           }
-//       },
-//         title: {
-//           display: true,
-//           text: 'Measurements',
-//           fontColor: 'white',
-//           fontSize: 18
-//         },
-//         responsive: true,
-//         scales: {
-//           xAxes: [
-//             {
-//               stacked: false,
-//               display: false,
-              
-//             }
-//           ],
-//           yAxes: [
-//             {
-//               stacked: false,
-//               gridLines: {
-//                 color: "#FFFFFF"
-//               },
-//               ticks: {
-//                 fontColor: 'white',
-//                 max: 100,
-//                 min: -10,
-//                 stepSize: 0
-//               }
-//             }
-//           ]
-//         }
-//       }
-//     });
-// lineChart.update();
-// }
-// }
-
-function createBarChart(chartData = []) {
+function createBarChart(chartData) {
   if (insoleBarData) {
+    console.log("Sit Counter", chartData.sitCounter);
+    console.log("Stand Counter", chartData.standCounter);
     barChart = new Chart(insoleBarData, {
       type: 'bar',
       data: {
-        labels: chartData.labels,
+        labels: ["dag 1", "dag 2"], // Dates
         datasets: [
           {
             label: 'Standing',
-            fill: false,
-            // data: chartData.standing_or_sitting,
-            data: chartData.standCounter,
+            data: [chartData.standCounter, 43],
             backgroundColor: 'red',
             borderColor: 'red' 
           },
-            {
-              label: 'Sitting',
-              fill: false,
-              // data: chartData.standing_or_sitting,
-              data: chartData.sitCounter,
-              backgroundColor: 'blue',
-              borderColor: 'blue'
-            }
-          ]
+          {
+            label: 'Sitting',
+            data: [chartData.sitCounter, 23],
+            backgroundColor: 'blue',
+            borderColor: 'blue'
+          }
+        ]
+      },
+      options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    suggestedMax: 100,
+                    suggestedMin: 0
+                }
+            }]
+        }
+    }
+    });
+    //barChart.update();
+  }
 }
-});
-barChart.update();
-        }
-        }
