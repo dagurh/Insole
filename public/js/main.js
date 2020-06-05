@@ -5,6 +5,7 @@ const insoleTable = document.querySelector('#Table');
 const insoleBarData = document.querySelector('#BarChart').getContext('2d');
 console.log("barchart div", insoleBarData)
 let barChart = '';
+let lineChart = '';
 
 if (insoleTable) {
   
@@ -122,15 +123,41 @@ function createBarChart(chartData) {
       },
       options: {
         scales: {
-            yAxes: [{
-                ticks: {
-                    suggestedMax: 100,
-                    suggestedMin: 0
-                }
-            }]
+          yAxes: [{
+            ticks: {
+              suggestedMax: 100,
+              suggestedMin: 0
+            }
+          }]
         }
-    }
+      }
     });
     //barChart.update();
   }
+}
+
+function createLineChart(chartdata) {
+  lineChart = new Chart( {
+    type: 'line',
+    data: {
+      labels: ["Today"],
+      datasets: [
+        {
+          label: 'Standing',
+          data: [chartData.standCounter],
+          backgroundColor: 'red',
+          borderColor: 'red',
+          fill: false
+        },
+        {
+          label: 'Sitting',
+          data: [chartData.sitCounter],
+          backgroundColor: 'blue',
+          borderColor: 'blue',
+          fill: false
+        }
+      ]
+    }
+  }
+  )
 }

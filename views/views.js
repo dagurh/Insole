@@ -61,12 +61,21 @@ function numberOfData () {
         button('Submit', { type: 'submit' })), { method: 'GET', action: '', id: 'measurements-form' });
 }
 
-function createChart () {
+function createBarChart () {
   return h1('Data measurements') +
   numberOfData() +
   div('', { id: 'Table' }) +
   div(
     canvas('', { id: 'BarChart' })
+  );
+}
+
+function createLineChart () {
+  return h1('Data measurements') +
+  numberOfData() +
+  div('', { id: 'Table' }) +
+  div(
+    canvas('', { id: 'LineChart' })
   );
 }
 
@@ -80,25 +89,11 @@ exports.measurementsView = function measurements (measurements = []) {
     br() +
     div(
     div(
-    createChart()
-   , { class: 'chart' }) +
+    createBarChart()
+   , { class: 'barChart' }) +
    div(
-    table(
-      thead(
-        tr(th('Timestamp') + th('Standing_or_sitting'))
-      ) +
-      tbody(
-        measurements.reduce((acc, measurement) => {
-          acc +=
-            tr(
-              td(new Date(measurement.timestamp).toLocaleString('da-DK')) +
-              td(measurement.standing_or_sitting)
-            );
-          return acc;
-        }, ''), { id: 'tbody' }
-      )
-    )
-   , { class: 'dataList' })
+   createLineChart()
+   , {class: 'lineChart'}) 
     , { class: 'box' })
   );
 };
