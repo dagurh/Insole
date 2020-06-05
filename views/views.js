@@ -72,8 +72,6 @@ function createBarChart () {
 
 function createLineChart () {
   return h1('Data measurements') +
-  numberOfData() +
-  div('', { id: 'Table' }) +
   div(
     canvas('', { id: 'LineChart' })
   );

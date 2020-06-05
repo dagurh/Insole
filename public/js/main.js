@@ -3,6 +3,7 @@
 
 const insoleTable = document.querySelector('#Table');
 const insoleBarData = document.querySelector('#BarChart').getContext('2d');
+const insoleLineData = document.querySelector('#LineChart')
 console.log("barchart div", insoleBarData)
 let barChart = '';
 let lineChart = '';
@@ -132,32 +133,36 @@ function createBarChart(chartData) {
         }
       }
     });
-    //barChart.update();
-  }
-}
-
-function createLineChart(chartdata) {
-  lineChart = new Chart( {
-    type: 'line',
-    data: {
-      labels: ["Today"],
-      datasets: [
-        {
-          label: 'Standing',
-          data: [chartData.standCounter],
-          backgroundColor: 'red',
-          borderColor: 'red',
-          fill: false
+      barChart = new Chart(insoleLineData, {
+        type: 'bar',
+        data: {
+          labels: ["Today"], // Dates
+          datasets: [
+            {
+              label: 'Standing',
+              data: [chartdata.standCounter],
+              backgroundColor: 'red',
+              borderColor: 'red' 
+            },
+            {
+              label: 'Sitting',
+              data: [chartData.sitCounter],
+              backgroundColor: 'blue',
+              borderColor: 'blue'
+            }
+          ]
         },
-        {
-          label: 'Sitting',
-          data: [chartData.sitCounter],
-          backgroundColor: 'blue',
-          borderColor: 'blue',
-          fill: false
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                suggestedMax: 100,
+                suggestedMin: 0
+              }
+            }]
+          }
         }
-      ]
+      });
+      //barChart.update();
     }
   }
-  )
-}
