@@ -1,6 +1,8 @@
 html, body {
-    margin: 0;
+  width:100%;  
+  margin: 0 auto;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 
 /*Bredde og længde på selve siden*/
