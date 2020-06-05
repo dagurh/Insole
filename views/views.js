@@ -85,7 +85,7 @@ exports.measurementsView = function measurements (measurements = []) {
     'Data measurements',
     div(
     h3('Neonious Data Website') +
-    a('index', {href: '../something.html'})+
+    a('index', {href: './something.html'})+
     b('This website shows the temperature and humidity inside my appartment.')
     ,{ class: 'headText' }) +
     br() +
