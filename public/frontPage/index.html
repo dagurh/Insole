@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta content="width=720, initial-scale=0.5, maximum-scale=1.0, user-scalable=1" name="viewport">
+        <link rel="stylesheet" type="text/css" href="./CSS/navigation.css">
+        <meta charset="UTF-8">
+        <title>INSOLITUS</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="./frontpage.css" />
+        <script defer src="./script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <div class="topnav">
+        <a href="charts.html">Charts</a>
+        <div class="topnav-right">
+            <a href="index.html">Goal Setting</a>
+        </div>
+    </div>
+
+    <body>
+        <div id="icon"><div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div></div>
+       <div class="page" id="frontpage">
+            <div id="opskrifter">
+                <h1>FUTURE YOU</h1>
+                
+                <div class="illustration">
+                    <img src="IMG/0.png" class="0" />
+                    <img src="IMG/1.png" class="1" />
+                    <img src="IMG/2.png" class="2" />
+                    <img src="IMG/3.png" class="3" />
+                    <img src="IMG/4.png" class="4" />
+                  </div>
+                  <div class="top">
+                  <p class="stand" >STANDING TIME: </p>
+                      <span id="procentage"></span><span>%</span>
+                      <p class="some">1 HOUR 35 MINUTES</p>
+                      <input type="range" min="1" max="100" value="50" class="slider" id="range">
+                  </div>
+                  <br> <br>
+                  <div class="slidecontainer">
+                      <p>GOAL SLIDER</p>
+                    <input type="range" min="1" max="100" value="50" class="sliderGoal" id="rangeGoal">
+                    <p></p><span id="goal"></span><span>%</span>
+                  </div>
+                  <div>
+                    <p class="med0"> Medical advice 0</p>
+                    <p class="med1"> Medical advice 1</p>
+                    <p class="med2"> Medical advice 2</p>
+                    <p class="med3"> Medical advice 3</p>
+                    <p class="med4"> Medical advice 4</p>
+                  </div>
+                
+            </div>
+        </div>
+       <div class="page" id="settings">
+        <h2>General</h2>
+            <h2>Notifications</h2>
+            <h2>Profile</h2>
+            <h2>Policy and terms</h2>
+            <h2>Logout</h2>
+        </div>
+       
+       <script src="JS/navigation.js"></script>
+    </body>
+</html>
