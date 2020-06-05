@@ -22,7 +22,8 @@ const {
   td,
   br,
   canvas,
-  b
+  b,
+  a
 } = require('../modules/html');
 
 function page (titleText, bodyText) {
@@ -75,6 +76,7 @@ exports.measurementsView = function measurements (measurements = []) {
     'Data measurements',
     div(
     h3('Neonious Data Website') +
+    a('index', {href: '../something.html'})+
     b('This website shows the temperature and humidity inside my appartment.')
     ,{ class: 'headText' }) +
     br() +
