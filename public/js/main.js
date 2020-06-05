@@ -104,17 +104,17 @@ function createBarChart(chartData) {
     barChart = new Chart(insoleBarData, {
       type: 'bar',
       data: {
-        labels: ["dag 1", "dag 2"], // Dates
+        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], // Dates
         datasets: [
           {
             label: 'Standing',
-            data: [chartData.standCounter, 43],
+            data: [50, 60, 70, 80, 75, 34, 45],
             backgroundColor: 'red',
             borderColor: 'red' 
           },
           {
             label: 'Sitting',
-            data: [chartData.sitCounter, 23],
+            data: [50, 40, 30, 20, 25, 66, 55],
             backgroundColor: 'blue',
             borderColor: 'blue'
           }
