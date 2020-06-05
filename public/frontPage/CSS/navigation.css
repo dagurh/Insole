@@ -1,0 +1,150 @@
+html, body {
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.page {
+    position:absolute;
+    width:720px;
+    height: 1280px;
+}
+
+.page#frontpage {
+    position: relative;
+    margin: 0;
+    top:0px;
+    left:0px;
+    background-color: lightblue;
+    text-align: center;
+}
+
+.page#settings { 
+    margin: 0;
+    top:0px;
+    left:-1280px;
+    background-color:#666;
+    text-align: center;
+    transition:left 0.2s linear;
+}
+
+.page#settings.move {
+    left:0px;
+    transition:left 0.2s linear;
+}
+
+#icon{
+   position: absolute;
+   top:0px;
+   left:660px;
+   width: 100px;
+   height: 100px;
+   user-select:none;
+    cursor: pointer;
+   z-index:2;
+}
+
+#icon .line{
+    width: 40px;
+    height: 6px;
+    background-color: white;
+    margin:7px;
+    border-radius: 4px;
+}
+
+#frontpage #opskrifter {
+    padding-top:25px;   
+    text-align: center; 
+    width: 720px;
+}
+
+#frontpage #opskrifter h1{
+    margin:0;
+}
+
+#frontpage #opskrifter .opskrift {
+    margin: 10 auto;
+    text-align: left;
+    width: 600px;
+    height: 200px;
+    border:1px solid black;
+    background-color: white;
+    user-select:none;
+    cursor: pointer;
+}
+
+#frontpage #opskrifter .opskrift h1 {
+    text-align: center;
+    font-size:2em;
+}
+
+.page.details {
+    top:0px;
+    left:720px;
+    background-color: lightgreen;
+    transition:left 0.2s linear;
+    text-align:center;
+}
+
+
+.page.details .back {
+    width: 100px;
+    height: 100px;
+    color:white;
+    text-align: center;
+    font-size:4em;
+    user-select:none;
+    cursor: pointer;
+}
+
+.page.details.move {
+    left:0px;
+    transition:left 1s linear;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav-right {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav-right a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 215px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav-right a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav-right a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
