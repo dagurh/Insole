@@ -1,30 +1,37 @@
 html, body {
-    margin: 0;
+  width:100%;  
+  margin: 0 auto;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 
+/*Bredde og længde på selve siden*/
 .page {
-    position:absolute;
-    width:720px;
-    height: 1280px;
+  position:absolute;
+  width:720px;
+  height: 1200px;
 }
 
 .page#frontpage {
-    position: relative;
-    margin: 0;
-    top:0px;
-    left:0px;
-    background-color: lightblue;
-    text-align: center;
+  position: relative;
+  margin: 0;
+  top:0px;
+  left:0px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
 }
 
 .page#settings { 
     margin: 0;
     top:0px;
     left:-1280px;
-    background-color:#666;
+    background-color:rgb(138, 173, 218);
     text-align: center;
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     transition:left 0.2s linear;
+    color: white;
+    line-height: 2.5;
 }
 
 .page#settings.move {
@@ -32,6 +39,7 @@ html, body {
     transition:left 0.2s linear;
 }
 
+/*Ikonet for menu*/
 #icon{
    position: absolute;
    top:0px;
@@ -103,12 +111,12 @@ html, body {
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color:rgb(138, 173, 218);
 }
 
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: white;
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
@@ -116,8 +124,8 @@ html, body {
 }
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color:rgb(190, 208, 231);
+  color:white;
 }
 
 .topnav a.active {
@@ -127,7 +135,7 @@ html, body {
 
 .topnav-right {
     overflow: hidden;
-    background-color: #333;
+    background-color:rgb(138, 173, 218);
   }
   
   .topnav-right a {
@@ -140,8 +148,8 @@ html, body {
   }
   
   .topnav-right a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: rgb(190, 208, 231);
+    color: white;
   }
   
   .topnav-right a.active {
