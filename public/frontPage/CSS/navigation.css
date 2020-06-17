@@ -5,11 +5,11 @@ html, body {
 
 }
 
-/*Bredde og længde på selve siden*/
+/*Bredde og længde af Williams skærm*/
 .page {
   position:absolute;
-  width:720px;
-  height: 1200px;
+  width:960px;
+  height: 1704px;
 }
 
 .page#frontpage {
@@ -21,19 +21,21 @@ html, body {
   text-align: center;
 }
 
+/*css til menuen*/
 .page#settings { 
     margin: 0;
     top:0px;
-    left:-1280px;
+    left:-1080px;
     background-color:rgb(138, 173, 218);
     text-align: center;
     text-transform: uppercase;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     transition:left 0.2s linear;
     color: white;
-    line-height: 2.5;
+    line-height: 5;
 }
 
+/*hastigheden på hvor hurtigt menuen kommer frem*/
 .page#settings.move {
     left:0px;
     transition:left 0.2s linear;
@@ -42,8 +44,8 @@ html, body {
 /*Ikonet for menu*/
 #icon{
    position: absolute;
-   top:0px;
-   left:660px;
+   top:15px;
+   left:670px;
    width: 100px;
    height: 100px;
    user-select:none;
@@ -85,13 +87,13 @@ html, body {
     font-size:2em;
 }
 
-.page.details {
+/*.page.details {
     top:0px;
     left:720px;
     background-color: lightgreen;
     transition:left 0.2s linear;
     text-align:center;
-}
+}*/
 
 
 .page.details .back {
@@ -114,45 +116,52 @@ html, body {
   background-color:rgb(138, 173, 218);
 }
 
+/*chart i menu*/
 .topnav a {
   float: left;
   color: white;
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 40px;
+  text-transform: uppercase;
 }
 
+/*hover for chart*/
 .topnav a:hover {
   background-color:rgb(190, 208, 231);
   color:white;
 }
 
-.topnav a.active {
+/*.topnav a.active {
   background-color: #4CAF50;
   color: white;
-}
+}*/
 
 .topnav-right {
     overflow: hidden;
     background-color:rgb(138, 173, 218);
   }
   
+  /*goal setting i menu*/
   .topnav-right a {
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 215px;
+    padding: 14px 62px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 40px;
+    text-transform: uppercase;
   }
   
+  /*hover for goal setting*/
   .topnav-right a:hover {
     background-color: rgb(190, 208, 231);
     color: white;
+    font-size: 40px;
   }
   
-  .topnav-right a.active {
+  /*.topnav-right a.active {
     background-color: #4CAF50;
     color: white;
-  }
+  }*/
