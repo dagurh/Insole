@@ -52,19 +52,8 @@ function page (titleText, bodyText) {
     body(bodyText));
 }
 
-function numberOfData () {
-  return form(
-    div(
-      label('Number of measurements ', { for: 'input' }) +
-        input({ type: 'number', id: 'input', name: 'input', min: '0',}) +
-        div('', { id: 'number-feedback', class: 'feedback' })) +
-      div(
-        button('Submit', { type: 'submit' })), { method: 'GET', action: '', id: 'measurements-form' });
-}
-
 function createBarChart () {
   return h1('Data measurements') +
-  numberOfData() +
   div('', { id: 'Table' }) +
   div(
     canvas('', { id: 'BarChart' })
