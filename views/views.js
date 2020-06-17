@@ -34,7 +34,7 @@ function page (titleText, bodyText) {
         rel: 'stylesheet',
         type: 'text/css',
         media: 'screen',
-        href: 'style/main.css'
+        href: 'style/.css'
       }) +
       script('', {
         defer: undefined,
