@@ -106,17 +106,17 @@ function createBarChart(chartData) {
     barChart = new Chart(insoleBarData, {
       type: 'bar',
       data: {
-        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], // Dates
+        labels: ["Today"], // Dates
         datasets: [
           {
             label: 'Standing',
-            data: [50, 60, 70, 80, 75, 34, 45],
+            data: [chartData.standCounter],
             backgroundColor: 'red',
             borderColor: 'red' 
           },
           {
             label: 'Sitting',
-            data: [50, 40, 30, 20, 25, 66, 55],
+            data: [chartData.sitCounter],
             backgroundColor: 'blue',
             borderColor: 'blue'
           }
@@ -136,17 +136,17 @@ function createBarChart(chartData) {
       barChart = new Chart(insoleLineData, {
         type: 'bar',
         data: {
-          labels: ["Today"], // Dates
+          labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], // Dates
           datasets: [
             {
               label: 'Standing',
-              data: [chartdata.standCounter],
+              data: [50, 60, 70, 80, 75, 34, 45],
               backgroundColor: 'red',
               borderColor: 'red' 
             },
             {
               label: 'Sitting',
-              data: [chartData.sitCounter],
+              data: [50, 40, 30, 20, 25, 66, 55],
               backgroundColor: 'blue',
               borderColor: 'blue'
             }
