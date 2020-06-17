@@ -91,7 +91,7 @@ exports.measurementsView = function measurements (measurements = []) {
           td(measurement.standing_or_sitting)
         );
         return acc;
-      }, ''), {id: }
+      }, ''), {id: 'tbody'}
     )
   );
 };
