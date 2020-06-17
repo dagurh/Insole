@@ -38,6 +38,8 @@ function addNewRow (measurement) {
   const row = document.createElement('tr');
   const stand = document.createElement('td');
   stand.textContent = measurement.standing_or_sitting;
+  console.log(row);
+  console.log(tbody);
   row.appendChild(stand);
   tbody.prepend(row);
 }
