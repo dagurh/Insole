@@ -154,8 +154,9 @@ img {
    width: 100px;
    height: 100px;
    user-select:none;
-    cursor: pointer;
+   cursor: pointer;
    z-index:2;
+   padding: 20px 20px;
 }
 
 #icon .line{
@@ -226,9 +227,9 @@ img {
   float: left;
   color: white;
   text-align: center;
-  padding: 14px 20px;
+  padding: 30px 20px;
   text-decoration: none;
-  font-size: 40px;
+  font-size: 30px;
   text-transform: uppercase;
 }
 
@@ -251,11 +252,11 @@ img {
   /*goal setting i menu*/
   .topnav-right a {
     float: left;
-    color: #f2f2f2;
+    color: white;
     text-align: center;
-    padding: 14px 62px;
+    padding: 30px 62px;
     text-decoration: none;
-    font-size: 40px;
+    font-size: 30px;
     text-transform: uppercase;
   }
   
