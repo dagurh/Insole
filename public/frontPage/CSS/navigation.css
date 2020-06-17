@@ -22,6 +22,7 @@ img {
   margin-right: auto;
 }
 
+/*overskrifter*/
 .stand, .goal {
   text-align: center;
   font-weight: bold;
@@ -88,7 +89,6 @@ img {
   background: rgb(138, 173, 218);
   cursor: pointer;
 }
-
 
 /*Bredde og længde af Williams skærm*/
 .page {
