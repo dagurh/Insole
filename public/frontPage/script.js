@@ -73,21 +73,21 @@ slider.oninput = function() {
     $(".med3").hide();
     $(".med4").hide();
   }
-  if(outputGoal.innerHTML >= 10 && output.innerHTML < 36 ) {
+  if(outputGoal.innerHTML >= 10 && outputGoal.innerHTML < 36 ) {
     $(".med0").hide();
     $(".med1").show();
     $(".med2").hide();
     $(".med3").hide();
     $(".med4").hide();
   }
-  if(outputGoal.innerHTML >= 36 && output.innerHTML < 63){
+  if(outputGoal.innerHTML >= 36 && outputGoal.innerHTML < 63){
     $(".med0").hide();
     $(".med1").hide();
     $(".med2").show();
     $(".med3").hide();
     $(".med4").hide();
   }
-  if(outputGoal.innerHTML >= 63 && output.innerHTML < 90) {
+  if(outputGoal.innerHTML >= 63 && outputGoal.innerHTML < 90) {
     $(".med0").hide();
     $(".med1").hide();
     $(".med2").hide();
