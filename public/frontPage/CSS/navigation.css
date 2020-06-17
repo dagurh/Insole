@@ -2,7 +2,6 @@ html, body {
   width:100%;  
   margin: 0 auto;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
 }
 
 /*Størrelse og placering af billede*/
@@ -25,6 +24,9 @@ img {
   border: 3px solid #d3d3d3;
   padding: 5px;
   margin: 2px;
+  font-weight: bold;
+  font-size: 60;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .med0, .med1, .med2, .med3, .med4 {
