@@ -34,7 +34,7 @@ function page (titleText, bodyText) {
         rel: 'stylesheet',
         type: 'text/css',
         media: 'screen',
-        href: 'style/main.css'
+        href: 'style/.css'
       }) +
       script('', {
         defer: undefined,
@@ -91,7 +91,7 @@ exports.measurementsView = function measurements (measurements = []) {
           td(measurement.standing_or_sitting)
         );
         return acc;
-      }, ''), {id: }
+      }, ''), {id: 'tbody'}
     )
   );
 };
