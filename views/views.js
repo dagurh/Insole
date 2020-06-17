@@ -34,7 +34,7 @@ function page (titleText, bodyText) {
         rel: 'stylesheet',
         type: 'text/css',
         media: 'screen',
-        href: 'style/.css'
+        href: 'style/main.css'
       }) +
       script('', {
         defer: undefined,
@@ -73,7 +73,7 @@ exports.measurementsView = function measurements (measurements = []) {
     div(
     h3('Neonious Data Website') +
     a('index', {href: './frontPage/index.html'})+
-    b('This website shows the temperature and humidity inside my appartment.')
+    b('This web-app shows charts presenting your standing and sitting data')
     ,{ class: 'headText' }) +
     br() +
     div(
@@ -83,6 +83,15 @@ exports.measurementsView = function measurements (measurements = []) {
    div(
    createLineChart()
    , {class: 'lineChart'}) 
-    , { class: 'box' })
+    , { class: 'box' }) +
+    tbody(
+      measurements.reduce((acc, measurement) => {
+        acc +=
+        tr(
+          td(measurement.standing_or_sitting)
+        );
+        return acc;
+      }, ''), {id: }
+    )
   );
 };
