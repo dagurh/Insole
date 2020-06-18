@@ -13,15 +13,23 @@ img {
 }
 
 /*Størrelse og css på procenterne*/
-#goal, #procentage {
+#goal {
   font-size: 30;
   font-weight: bold;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+/*Nederste box*/
+.box {
+  background-color: rgb(138, 173, 218);
+  padding: 10px;
+  border-radius: 25px;
+}
+
+/*Box around 50*/
 #procentage {
   width: 45px;
-  border: 3px solid #d3d3d3;
+  border: 2px solid #e6e3e3;
   padding: 5px;
   margin: 2px;
   font-weight: bold;
@@ -36,12 +44,33 @@ img {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+  color: white;
+}
+
+h3 {
+  color: white;
+}
+
+.standprocent {
+  font-size: 40;
+}
+
+.goalprocent {
+  font-size: 30;
+  color: white;
 }
 
 /*overskrifter*/
-.stand, .goal {
+.stand {
   text-align: center;
   font-weight: bold;
+  color: black;
+}
+
+.goal {
+  text-align: center;
+  font-weight: bold;
+  color: white;
 }
 
 /*Slider for image*/
@@ -71,7 +100,7 @@ img {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: rgb(138, 173, 218);
+  background: rgb(24, 85, 163);
   cursor: pointer;
 }
 
@@ -81,7 +110,7 @@ img {
   width: 70%;
   height: 15px;
   border-radius: 5px;  
-  background: #d3d3d3;
+  background: white;
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
@@ -94,7 +123,7 @@ img {
   width: 25px;
   height: 25px;
   border-radius: 50%; 
-  background:rgb(138, 173, 218);
+  background:rgb(24, 85, 163);
   cursor: pointer;
 }
 
@@ -156,7 +185,7 @@ img {
    user-select:none;
    cursor: pointer;
    z-index:2;
-   padding: 20px 20px;
+   padding: 10px 20px;
 }
 
 #icon .line{
@@ -229,7 +258,7 @@ img {
   text-align: center;
   padding: 30px 20px;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 20px;
   text-transform: uppercase;
 }
 
@@ -256,7 +285,7 @@ img {
     text-align: center;
     padding: 30px 62px;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 20px;
     text-transform: uppercase;
   }
   
@@ -264,7 +293,7 @@ img {
   .topnav-right a:hover {
     background-color: rgb(190, 208, 231);
     color: white;
-    font-size: 40px;
+    font-size: 20px;
   }
   
   /*.topnav-right a.active {
