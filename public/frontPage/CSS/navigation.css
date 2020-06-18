@@ -4,16 +4,13 @@ html, body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-input {
-  color: white;
-}
-
 /*Størrelse og placering af billede*/
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 55%;
+  margin-bottom: 0px;
 }
 
 /*Størrelse og css på procenterne*/
@@ -26,9 +23,9 @@ img {
 /*Nederste box*/
 .box {
   background-color: rgb(138, 173, 218);
-  padding: 5px;
-  border-radius: 25px;
-  padding-bottom: 40px;
+  border-radius: 35px;
+  padding-bottom: 30px;
+  padding-top: 10px;
 }
 
 /*1 hour 35 min*/
@@ -44,7 +41,7 @@ img {
   padding: 5px;
   margin: 2px;
   font-weight: bold;
-  font-size: 80;
+  font-size: 60;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -64,7 +61,7 @@ h3 {
 }
 
 .standprocent {
-  font-size: 60;
+  font-size: 40;
   font-weight: bold;
 }
 
@@ -79,13 +76,14 @@ h3 {
   font-weight: bold;
   color: black;
   margin-top: 0px;
-  font-size: 22;
+  font-size: 20;
 }
 
 .goal {
   text-align: center;
   color: white;
-  font-size: 45;
+  font-size: 40;
+  margin-top: 5px;
 }
 
 /*Slider for image*/
@@ -154,8 +152,8 @@ h3 {
 /*Bredde og længde af Williams skærm iphone6s*/
 .page {
   position:absolute;
-  width:900px;
-  height: 1200px;
+  width:700px;
+  height: 900px;
 }
 
 .page#frontpage {
@@ -171,7 +169,7 @@ h3 {
 .page#settings { 
     margin: 0;
     top:0px;
-    left:-960px;
+    left:-750px;
     background-color:rgb(138, 173, 218);
     text-align: center;
     text-transform: uppercase;
@@ -181,8 +179,8 @@ h3 {
     color: white;
     line-height: 5;
     position:absolute;
-    width:820px;
-    height: 1200px;
+    width:750px;
+    height: 900px;
 }
 
 /*hastigheden på hvor hurtigt menuen kommer frem*/
@@ -195,7 +193,7 @@ h3 {
 #icon{
    position: absolute;
    top:15px;
-   left:670px;
+   left:650px;
    width: 100px;
    height: 100px;
    user-select:none;
@@ -215,7 +213,7 @@ h3 {
 #frontpage #opskrifter {
     padding-top:25px;   
     text-align: center; 
-    width: 700px;
+    width: 750px;
 }
 
 #frontpage #opskrifter h1{
@@ -263,8 +261,8 @@ h3 {
 }
 
 .topnav {
-  overflow: hidden;
   background-color:rgb(138, 173, 218);
+  overflow: hidden;
 }
 
 /*chart i menu*/
