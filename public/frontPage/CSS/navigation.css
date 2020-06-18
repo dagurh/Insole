@@ -58,6 +58,7 @@ img {
 
 h3 {
   color: white;
+  overflow: hidden;
 }
 
 .standprocent {
@@ -180,7 +181,7 @@ h3 {
     line-height: 5;
     position:absolute;
     width:750px;
-    height: 900px;
+    height: 1100px;
 }
 
 /*hastigheden på hvor hurtigt menuen kommer frem*/
