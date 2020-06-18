@@ -4,6 +4,10 @@ html, body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+input {
+  color: white;
+}
+
 /*Størrelse og placering af billede*/
 img {
   display: block;
@@ -24,6 +28,7 @@ img {
   background-color: rgb(138, 173, 218);
   padding: 5px;
   border-radius: 25px;
+  padding-bottom: 40px;
 }
 
 /*1 hour 35 min*/
@@ -149,8 +154,8 @@ h3 {
 /*Bredde og længde af Williams skærm iphone6s*/
 .page {
   position:absolute;
-  width:800px;
-  height: 1400px;
+  width:900px;
+  height: 1200px;
 }
 
 .page#frontpage {
@@ -174,10 +179,10 @@ h3 {
     transition:left 0.2s linear;
     font-size: 25;
     color: white;
-    line-height: 6;
+    line-height: 5;
     position:absolute;
-    width:800px;
-    height: 1400px;
+    width:820px;
+    height: 1200px;
 }
 
 /*hastigheden på hvor hurtigt menuen kommer frem*/
