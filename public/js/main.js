@@ -1,12 +1,13 @@
 'use strict';
 /* global XMLHttpRequest Chart */
 
+
 const insoleTable = document.querySelector('#Table');
 const insoleBarData = document.querySelector('#BarChart').getContext('2d');
 const insoleLineData = document.querySelector('#LineChart')
 console.log("barchart div", insoleBarData)
 let barChart = '';
-let lineChart = '';
+let barChartFake = '';
 
 if (insoleTable) {
   
@@ -133,7 +134,7 @@ function createBarChart(chartData) {
         }
       }
     });
-      barChart = new Chart(insoleLineData, {
+      barChartFake = new Chart(insoleLineData, {
         type: 'bar',
         data: {
           labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], // Dates
