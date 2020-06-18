@@ -103,8 +103,8 @@ h3 {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%; 
   background:rgb(138, 173, 218);
   cursor: pointer;
@@ -135,8 +135,8 @@ h3 {
 .sliderGoal::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%; 
   background:rgb(24, 85, 163);
   cursor: pointer;
