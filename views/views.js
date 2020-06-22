@@ -71,10 +71,8 @@ exports.measurementsView = function measurements (measurements = []) {
   return page(
     'Data measurements',
     div(
-    h3() +
     a('CHARTS', {href: './'})+
     a('GOAL SETTING', {href: './frontPage/index.html'})+
-    a('MENU', {href: './frontPage/index.html'})+
     b()
     , { class: 'topnav' }) +
     br() +
