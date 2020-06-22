@@ -83,15 +83,6 @@ exports.measurementsView = function measurements (measurements = []) {
    div(
    createLineChart()
    , {class: 'lineChart'}) 
-    , { class: 'box' }) +
-    tbody(
-      measurements.reduce((acc, measurement) => {
-        acc +=
-        tr(
-          td(measurement.standing_or_sitting)
-        );
-        return acc;
-      }, ''), {id: 'tbody'}
-    )
+    , { class: 'box' })
   );
 };
