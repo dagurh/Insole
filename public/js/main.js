@@ -111,14 +111,14 @@ function createBarChart(chartData) {
           {
             label: 'Standing',
             data: [chartData.standCounter],
-            backgroundColor: 'red',
-            borderColor: 'red' 
+            backgroundColor: 'rgb(245, 201, 91)',
+            borderColor: 'rgb(245, 201, 91)' 
           },
           {
             label: 'Sitting',
             data: [chartData.sitCounter],
-            backgroundColor: 'blue',
-            borderColor: 'blue'
+            backgroundColor: 'rgb(138, 173, 218)',
+            borderColor: 'rgb(138, 173, 218)'
           }
         ]
       },
@@ -148,7 +148,7 @@ function createBarChart(chartData) {
               label: 'Sitting',
               data: [50, 40, 30, 20, 25, 66, 55],
               backgroundColor: 'blue',
-              borderColor: 'blue'
+              borderColor: 'rgb(138, 173, 218)'
             }
           ]
         },

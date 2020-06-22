@@ -1,0 +1,317 @@
+html, body {
+  width:100%;  
+  margin: 0 auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*Størrelse og placering af billede*/
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 55%;
+  margin-bottom: 0px;
+}
+
+/*Størrelse og css på procenterne*/
+#goal {
+  font-size: 30;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*Nederste box*/
+.box {
+  background-color: rgb(138, 173, 218);
+  border-radius: 35px;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+/*1 hour 35 min*/
+.some {
+  font-size: 18;
+  margin-bottom: 15px;
+}
+
+/*Box around 50 + font 50*/
+#procentage {
+  width: 45px;
+  border: 2px solid #e6e3e3;
+  padding: 5px;
+  margin: 2px;
+  font-weight: bold;
+  font-size: 60;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.med0, .med1, .med2, .med3, .med4 {
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-size: 18;
+}
+
+h3 {
+  color: white;
+  overflow: hidden;
+}
+
+.standprocent {
+  font-size: 40;
+  font-weight: bold;
+}
+
+.goalprocent {
+  font-size: 30;
+  color: white;
+}
+
+/*overskrifter*/
+.stand {
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  margin-top: 0px;
+  font-size: 20;
+}
+
+.goal {
+  text-align: center;
+  color: white;
+  font-size: 40;
+  margin-top: 5px;
+}
+
+/*Slider for image*/
+.slider {
+  -webkit-appearance: none;
+  width: 70%;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%; 
+  background:rgb(138, 173, 218);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(24, 85, 163);
+  cursor: pointer;
+}
+
+/*slider for goal setting*/
+.sliderGoal {
+  -webkit-appearance: none;
+  width: 70%;
+  height: 15px;
+  border-radius: 5px;  
+  background: white;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  color: white;
+}
+
+.sliderGoal::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%; 
+  background:rgb(24, 85, 163);
+  cursor: pointer;
+}
+
+.sliderGoal::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(138, 173, 218);
+  cursor: pointer;
+}
+
+/*Bredde og længde af Williams skærm iphone6s*/
+.page {
+  position:absolute;
+  width:700px;
+  height: 900px;
+}
+
+.page#frontpage {
+  position: relative;
+  margin: 0;
+  top:0px;
+  left:0px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+/*css til menuen*/
+.page#settings { 
+    margin: 0;
+    top:0px;
+    left:-750px;
+    background-color:rgb(138, 173, 218);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition:left 0.2s linear;
+    font-size: 25;
+    color: white;
+    line-height: 5;
+    position:absolute;
+    width:750px;
+    height: 1100px;
+}
+
+/*hastigheden på hvor hurtigt menuen kommer frem*/
+.page#settings.move {
+    left:0px;
+    transition:left 0.2s linear;
+}
+
+/*Ikonet for menu*/
+#icon{
+   position: absolute;
+   top:15px;
+   left:650px;
+   width: 100px;
+   height: 100px;
+   user-select:none;
+   cursor: pointer;
+   z-index:2;
+   padding: 10px 20px;
+}
+
+#icon .line{
+    width: 40px;
+    height: 6px;
+    background-color: white;
+    margin:7px;
+    border-radius: 4px;
+}
+
+#frontpage #opskrifter {
+    padding-top:25px;   
+    text-align: center; 
+    width: 750px;
+}
+
+#frontpage #opskrifter h1{
+    margin:0;
+}
+
+#frontpage #opskrifter .opskrift {
+    margin: 10 auto;
+    text-align: left;
+    width: 600px;
+    height: 200px;
+    border:1px solid black;
+    background-color: white;
+    user-select:none;
+    cursor: pointer;
+}
+
+#frontpage #opskrifter .opskrift h1 {
+    text-align: center;
+    font-size:2em;
+}
+
+/*.page.details {
+    top:0px;
+    left:720px;
+    background-color: lightgreen;
+    transition:left 0.2s linear;
+    text-align:center;
+}*/
+
+
+.page.details .back {
+    width: 100px;
+    height: 100px;
+    color:white;
+    text-align: center;
+    font-size:4em;
+    user-select:none;
+    cursor: pointer;
+}
+
+.page.details.move {
+    left:0px;
+    transition:left 1s linear;
+}
+
+.topnav {
+  background-color:rgb(138, 173, 218);
+  overflow: hidden;
+}
+
+/*chart i menu*/
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+/*hover for chart*/
+.topnav a:hover {
+  background-color:rgb(190, 208, 231);
+  color:white;
+}
+
+/*.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}*/
+
+.topnav-right {
+    overflow: hidden;
+    background-color:rgb(138, 173, 218);
+  }
+  
+  /*goal setting i menu*/
+  .topnav-right a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 30px 62px;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  
+  /*hover for goal setting*/
+  .topnav-right a:hover {
+    background-color: rgb(190, 208, 231);
+    color: white;
+    font-size: 20px;
+  }
+  
+  /*.topnav-right a.active {
+    background-color: #4CAF50;
+    color: white;
+  }*/

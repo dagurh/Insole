@@ -71,9 +71,9 @@ exports.measurementsView = function measurements (measurements = []) {
   return page(
     'Data measurements',
     div(
-    h3('Neonious Data Website') +
+    h3() +
     a('index', {href: './frontPage/index.html'})+
-    b('This web-app shows charts presenting your standing and sitting data')
+    b()
     ,{ class: 'headText' }) +
     br() +
     div(
