@@ -5,37 +5,23 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-th, td {
-  padding: 15px;
-  text-align: left;
-  border-bottom: 1px solid white;
-}
-
-th {
-  font-size: 18px;
-}
-
-table {
-  margin: auto;
-}
-
-.box {
+/*.box {
   display: flex;
 	justify-content: left;
 	align-items: flex-start;
-} 
+} */
 
-.box2 {
+/*.box2 {
   display: flex;
 	justify-content: left;
 	align-items: flex-start;
-} 
+} */
 
-.chart, .dataList {
+/*.chart, .dataList {
   padding: 10px;
   background-color: white;
   margin: 10px;
-}
+}*/
 
 .temp, .humid {
   padding: 10px;
@@ -43,30 +29,38 @@ table {
   margin: 10px;
 }
 
-.chart {
-  height: 500px;
-  width:600px;
+.barChart {
+  height: 250px;
+  width: 650px;
+  position: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
 }
 
-.temp {
+.lineChart {
+  height: 250px;
+  width: 650px;
+  position: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+}
+
+/*.temp {
   width:500px;
 
 }
 
 .humid {
   width:500px;
-
-}
-
-h3 {
-  font-size: 40px;
-  margin-block-start: 3rem;
-  margin-block-end: 0rem;
-  color: black;
-}
+}*/
 
 h1 {
   color: black;
+  position: center;
+  margin-top: 0;
+  margin-bottom: 50px;
 }
 
 label {

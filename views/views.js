@@ -53,7 +53,7 @@ function page (titleText, bodyText) {
 }
 
 function createBarChart () {
-  return h1('Data measurements') +
+  return h1('DATA MEASUREMENTS') +
   div('', { id: 'Table' }) +
   div(
     canvas('', { id: 'BarChart' })
