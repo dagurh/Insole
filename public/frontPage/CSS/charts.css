@@ -33,17 +33,15 @@ body {
   height: 250px;
   width: 650px;
   position: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
+  margin-left: 50px;
+  margin-top: 0;
 }
 
 .lineChart {
   height: 250px;
   width: 650px;
   position: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 50px;
   margin-top: 150px;
 }
 
@@ -61,6 +59,7 @@ h1 {
   position: center;
   margin-top: 0;
   margin-bottom: 50px;
+  text-align: center;
 }
 
 label {
