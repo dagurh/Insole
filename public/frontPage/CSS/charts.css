@@ -30,19 +30,19 @@ body {
 }*/
 
 .barChart {
-  height: 250px;
-  width: 650px;
+  height: 600px;
+  width: 900px;
   position: center;
   margin-left: 50px;
   margin-top: 0;
 }
 
 .lineChart {
-  height: 250px;
-  width: 650px;
+  height: 600px;
+  width: 900px;
   position: center;
   margin-left: 50px;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 /*.temp {
@@ -158,10 +158,10 @@ label {
       cursor: pointer;
   }
   
-  #frontpage #opskrifter .opskrift h1 {
+  /*#frontpage #opskrifter .opskrift h1 {
       text-align: center;
       font-size:2em;
-  }
+  }*/
   
   .page.details .back {
       width: 100px;
