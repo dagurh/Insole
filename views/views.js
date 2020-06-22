@@ -34,7 +34,7 @@ function page (titleText, bodyText) {
         rel: 'stylesheet',
         type: 'text/css',
         media: 'screen',
-        href: 'style/.css'
+        href: 'frontPage/CSS/charts.css'
       }) +
       script('', {
         defer: undefined,
@@ -61,7 +61,7 @@ function createBarChart () {
 }
 
 function createLineChart () {
-  return h1('Data measurements') +
+  return h1() +
   div(
     canvas('', { id: 'LineChart' })
   );
@@ -72,14 +72,17 @@ exports.measurementsView = function measurements (measurements = []) {
     'Data measurements',
     div(
     h3() +
-    a('index', {href: './frontPage/index.html'})+
+    a('CHARTS', {href: './'})+
+    a('GOAL SETTING', {href: './frontPage/index.html'})+
+    a('MENU', {href: './frontPage/index.html'})+
     b()
-    ,{ class: 'headText' }) +
+    , { class: 'topnav' }) +
     br() +
     div(
     div(
     createBarChart()
    , { class: 'barChart' }) +
+   br() +
    div(
    createLineChart()
    , {class: 'lineChart'}) 

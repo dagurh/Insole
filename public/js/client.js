@@ -48,7 +48,7 @@ function addData (measurement) {
   console.log("Udate chart", measurement);
   console.log(barChart.data.datasets[0].data[0]);
   console.log(barChart.data.datasets[1].data[0]);
-  if(measurement.standing_or_sitting <= 1){
+  if(measurement.standing_or_sitting <= 0){
     let value = barChart.data.datasets[1].data[0];
     value++;
     barChart.data.datasets[1].data[0] = value;

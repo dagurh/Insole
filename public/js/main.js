@@ -86,7 +86,7 @@ function transformToChartData (measurements = []) {
   let standCounter = 0;
   console.log("Measurements", measurements);
   for (i = 0; i < measurements.length; i++) {
-    if(measurements[i].standing_or_sitting <= 1){
+    if(measurements[i].standing_or_sitting <= 0){
       sitCounter++;
       console.log(sitCounter);
     }
@@ -142,13 +142,13 @@ function createBarChart(chartData) {
             {
               label: 'Standing',
               data: [50, 60, 70, 80, 75, 34, 45],
-              backgroundColor: 'red',
-              borderColor: 'red' 
+              backgroundColor: 'rgb(245, 201, 91)',
+              borderColor: 'rgb(245, 201, 91)' 
             },
             {
               label: 'Sitting',
               data: [50, 40, 30, 20, 25, 66, 55],
-              backgroundColor: 'blue',
+              backgroundColor: 'rgb(138, 173, 218)',
               borderColor: 'rgb(138, 173, 218)'
             }
           ]
