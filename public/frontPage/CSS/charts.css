@@ -188,12 +188,12 @@ label {
     float: left;
     color: white;
     text-align: center;
-    padding: 30px;
+    padding: 39px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 26px;
     text-transform: uppercase;
-    padding-left: 20px;
-    padding-right: 62px;
+    padding-left: 26px;
+    padding-right: 80px;
   }
   
   /*hover for chart*/
